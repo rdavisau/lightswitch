@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>b71f9e8f-d01e-4a2c-bfbb-39b2bfb8832f</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>LightSwitch.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)CommandReceiver.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CommandSender.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\CommandKind.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\ILightSwitchCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\SetOverrideCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)VisualOverride.cs" />
+  </ItemGroup>
+</Project>

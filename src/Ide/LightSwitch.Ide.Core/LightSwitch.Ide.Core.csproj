@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Configurations>Debug;Release;Agent</Configurations>
+  </PropertyGroup>
+
+  <Import Project="..\..\Core\LightSwitch.Shared\LightSwitch.Shared.projitems" Label="Shared" />
+</Project>

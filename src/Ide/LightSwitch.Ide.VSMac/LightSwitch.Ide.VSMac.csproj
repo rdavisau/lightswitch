@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <MDBinDir Condition=" '$(OS)' == 'Windows_NT' ">C:\Program Files (x86)\MonoDevelop\bin</MDBinDir>
+    <TargetFramework>net47</TargetFramework>
+    <RootNamespace>LightSwitch.Ide.VSMac</RootNamespace>
+    <Configurations>Debug;Release;Agent</Configurations>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="MonoDevelop.Addins" Version="0.4.7" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LightSwitch.Ide.Core\LightSwitch.Ide.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commands\" />
+  </ItemGroup>
+</Project>

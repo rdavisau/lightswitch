@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionModel>
+
+    <Runtime>
+    </Runtime>
+    
+    <Extension path="/MonoDevelop/Ide/Pads">
+        <Pad id="LightSwitch.Ide.VSMac.Pads.MainPad" 
+            _label="LightSwitch 💡" 
+            defaultLayout="*" 
+            defaultPlacement="Bottom" 
+            class="LightSwitch.Ide.VSMac.MainPad" />
+    </Extension>
+    
+    <Extension path="/MonoDevelop/Ide/Commands">
+        <Command
+            id="LightSwitch.Ide.VSMac.Commands.ToggleLightDark"
+            _label="Toggle Visual Override"
+            shortcut="Ctrl|Shift|T"
+            macShortcut="Ctrl|Shift|T"
+            defaultHandler="LightSwitch.Ide.VSMac.ToggleOverrideHandler" />
+            
+        <Command
+            id="LightSwitch.Ide.VSMac.Commands.ToggleInterval"
+            _label="Toggle Interval Override"
+            shortcut="Ctrl|Shift|U"
+            macShortcut="Ctrl|Shift|U"
+            defaultHandler="LightSwitch.Ide.VSMac.ToggleIntervalHandler" />
+            
+        <Command
+            id="LightSwitch.Ide.VSMac.Commands.DisableOverride"
+            _label="Disable Visual Override"
+            shortcut="Alt|Ctrl|Shift|T"
+            macShortcut="Alt|Ctrl|Shift|T"
+            defaultHandler="LightSwitch.Ide.VSMac.DisableOverrideHandler" />
+            
+    </Extension>
+    
+</ExtensionModel>

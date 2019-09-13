@@ -1,0 +1,99 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras/2.0.29">
+
+  <PropertyGroup>
+    <!--Work around so the conditions work below-->
+    <TargetFrameworks></TargetFrameworks>
+
+    <TargetFrameworks Condition=" '$(OS)' == 'Windows_NT' ">netstandard2.0;Xamarin.iOS10;monoandroid90</TargetFrameworks>
+    <TargetFrameworks Condition=" '$(OS)' != 'Windows_NT' ">netstandard2.0;Xamarin.iOS10;monoandroid90</TargetFrameworks>
+
+    <AssemblyName>LightSwitch.Agent</AssemblyName>
+    <RootNamespace>LightSwitch.Agent</RootNamespace>
+    <PackageId>LightSwitch</PackageId>
+    
+    <Product>$(AssemblyName) ($(TargetFramework))</Product>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyFileVersion>1.0.0.0</AssemblyFileVersion>
+    <Version>1.0.0.0</Version>
+    <PackageVersion>1.0.0.0</PackageVersion>
+    <PackOnBuild>true</PackOnBuild>
+    <NeutralLanguage>en</NeutralLanguage>
+    <LangVersion>default</LangVersion>
+    <DefineConstants>$(DefineConstants);</DefineConstants>
+
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
+    <AndroidUseIntermediateDesignerFile>False</AndroidUseIntermediateDesignerFile>
+    <DesignTimeBuild>false</DesignTimeBuild>
+
+    <LangVersion>latest</LangVersion>
+    <DebugType>portable</DebugType>
+
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/rdavisau/lightswitch</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/rdavisau/lightswitch</RepositoryUrl>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageTags>xamarin,ios,android,xamarin.forms,dark mode,light mode</PackageTags>
+    
+    <Title>LightSwitch 💡</Title>
+    <Summary>Toggle light/dark visual override for Xamarin apps from the IDE.</Summary>
+    <Description>Toggle light/dark visual override for Xamarin apps from the IDE. Install the companion IDE plugin to use this.</Description>
+
+    <Owners>Ryan Davis</Owners>
+    <Authors>Ryan Davis</Authors>
+    <Copyright>Copyright 2019</Copyright>
+    <Configurations>Debug;Release;Agent</Configurations>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)'=='Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)'=='Release' ">
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="**\*.shared.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard')) ">
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('uap10.0')) ">
+    <Compile Include="**\*.uwp.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('monoandroid')) ">
+    <Compile Include="**\*.android.cs" />
+    <PackageReference Include="Plugin.CurrentActivity" Version="2.1.0.4">
+    </PackageReference>
+    <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.0.2-preview02">
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
+    <Compile Include="**\*.apple.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('netcoreapp')) ">
+    <Compile Include="**\*.netcore.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="obj\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <None Remove="obj\**" />
+  </ItemGroup>
+
+  <Import Project="..\..\Core\LightSwitch.Shared\LightSwitch.Shared.projitems" Label="Shared" />
+
+</Project>
