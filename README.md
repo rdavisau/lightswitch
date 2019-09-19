@@ -32,7 +32,7 @@ LightSwitch will probably provide the most value when used in conjunction with s
 
 ## use 
 
-Once both the IDE and app are set up, you can use the LightSwitch 💡 pad or keyboard shortcuts to switch the theme override for running apps. The 'Light' and 'Dark' options force apps to apply the respective visual overrides. The 'Interval' option periodically switches between light and dark theme overrides at the interval specified. Since it doesn't seem to work very reliably at lower values, the shortest interval LightSwitch will use you specify is 1000ms.
+Once both the IDE and app are set up, you can use the LightSwitch 💡 pad or keyboard shortcuts to switch the theme override for running apps. The 'Light' and 'Dark' options force apps to apply the respective visual overrides. The 'Interval' option periodically switches between light and dark theme overrides at the interval specified. Since it doesn't seem to work very reliably at lower values, the shortest interval LightSwitch will use is 1000ms.
 
 ### keyboard shortcuts:
 
@@ -66,7 +66,7 @@ I made this mostly as a means to procrastinate actually adding dark mode support
 
 ## acknowledgements
 
-* I spied a (new?) [plugin template](https://twitter.com/JamesMontemagno) from [@jamesmontemagno](https://twitter.com/JamesMontemagno), which I used for the agent. Thanks it worked good 👍
+* I spied a (new?) [plugin template](https://github.com/jamesmontemagno/plugin-template) from [@jamesmontemagno](https://twitter.com/JamesMontemagno), which I used for the agent. Thanks it worked good 👍
 * Everything I know about GTK (not a lot) I got from the VSMac plugin for [@praeclarum](https://twitter.com/praeclarum)'s [Continuous](https://github.com/praeclarum/Continuous).
 * Everything I know about VSIX (not a lot) I got from the VS plugin for [@praeclarum](https://twitter.com/praeclarum)'s [Continuous](https://github.com/praeclarum/Continuous).
 * Theme toggling for the Xamarin.Forms sample straight out of [@davidortinau](https://twitter.com/davidortinau)'s [Xappy](https://github.com/davidortinau/Xappy). 
